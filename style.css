@@ -1,0 +1,90 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #104253;
+  --game-board: #91a5ac;
+  --square: #e8f3ee;
+  --x: #e66453;
+  --o: #cec238;
+}
+
+body {
+  background-color: var(--bg);
+  height: 100vh;
+  display: flex;
+  position: relative;
+  font-family: sans-serif;
+}
+
+.modal {
+  display: none;
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.815);
+  align-items: center;
+}
+
+.modal-content {
+  width: 50%;
+  margin: 0 auto;
+  padding: 3em;
+  background-color: var(--bg);
+  border: 1em solid var(--x);
+  border-radius: 2em;
+  text-align: center;
+}
+
+.modal-content h2,
+h3 {
+  color: var(--o);
+}
+
+.modal-content h2 {
+  text-transform: uppercase;
+}
+
+.game-board {
+  min-width: 60vh;
+  height: 60vh;
+  margin: auto;
+  padding: 1em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1em;
+  background-color: var(--game-board);
+  position: relative;
+}
+
+.square {
+  width: 100%;
+  height: 100%;
+  background-color: var(--square);
+  position: relative;
+}
+
+.mark {
+  font-weight: bold;
+  font-size: 6em;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -130%);
+  z-index: 555;
+}
+
+.mark-x {
+  color: var(--x);
+}
+
+.mark-o {
+  color: var(--o);
+}
